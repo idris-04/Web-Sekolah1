@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Formulir - SMAN 1 SEMENDAWAI SUKU III</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0 0 20px;
+        }
+
+        .form-container {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #218838;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="halaman_daftar.html">DAFTAR PPDB</a></li>
+            <li><a href="hasil_seleksi.html">HASIL SELEKSI</a></li>
+            <li><a href="cetak_formulir.html">CETAK FORMULIR</a></li>
+            <li><a href="galeri.html">GALERI</a></li>
+            <li><a href="hubungi_kami.html">HUBUNGI KAMI</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Cetak Formulir Pendaftaran</h1>
+
+        <!-- Formulir Pendaftaran -->
+        <div class="form-container">
+            <form id="formPendaftaran">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" required>
+
+                <label for="tempatLahir">Tempat Lahir</label>
+                <input type="text" id="tempatLahir" name="tempatLahir" required>
+
+                <label for="tanggalLahir">Tanggal Lahir</label>
+                <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+
+                <label for="jenisKelamin">Jenis Kelamin</label>
+                <select id="jenisKelamin" name="jenisKelamin" required>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" name="alamat" rows="4" required></textarea>
+
+                <label for="asalSekolah">Asal Sekolah</label>
+                <input type="text" id="asalSekolah" name="asalSekolah" required>
+
+                <button type="button" onclick="cetakFormulir()">Cetak Formulir</button>
+            </form>
+        </div>
+
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
+    </div>
+
+    <script>
+        function cetakFormulir() {
+            const form = document.getElementById('formPendaftaran');
+            const nama = form.nama.value;
+            const tempatLahir = form.tempatLahir.value;
+            const tanggalLahir = form.tanggalLahir.value;
+            const jenisKelamin = form.jenisKelamin.value;
+            const alamat = form.alamat.value;
+            const asalSekolah = form.asalSekolah.value;
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head><title>Formulir Pendaftaran</title></head>
+                <body>
+                    <h1>Formulir Pendaftaran Siswa Baru</h1>
+                    <p><strong>Nama Lengkap:</strong> ${nama}</p>
+                    <p><strong>Tempat Lahir:</strong> ${tempatLahir}</p>
+                    <p><strong>Tanggal Lahir:</strong> ${tanggalLahir}</p>
+                    <p><strong>Jenis Kelamin:</strong> ${jenisKelamin}</p>
+                    <p><strong>Alamat:</strong> ${alamat}</p>
+                    <p><strong>Asal Sekolah:</strong> ${asalSekolah}</p>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+</body>
+</html>

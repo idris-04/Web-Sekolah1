@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Seleksi - SMAN 1 SEMENDAWAI SUKU III</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        .content {
+            margin-top: 80px; /* Adjusted margin to account for the fixed navbar */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0 0 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #0550f1;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #030574;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="halaman_daftar.html">DAFTAR PPDB</a></li>
+            <li><a href="hasil_seleksi.html">HASIL SELEKSI</a></li>
+            <li><a href="cetak_formulir.html">CETAK FORMULIR</a></li>
+            <li><a href="galeri.html">GALERI</a></li>
+            <li><a href="hubungi_kami.html">HUBUNGI KAMI</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Hasil Seleksi PPDB 2025/2026</h1>
+
+        <!-- Table for displaying selection results -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Siswa</th>
+                    <th>Alamat</th>
+                    <th>Asal Sekolah</th>
+                    <th>No.Telepon</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example data -->
+                <tr>
+                    <td>1</td>
+                    <td>Ani Salsabila</td>
+                    <td>Jl.Anggrek 1</td>
+                    <td>SMPN 1 OKI</td>
+                    <td>1234567890</td>
+                    <td>Lulus</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Rudi Firmansyah</td>
+                    <td>Jl.Anggrek 2</td>
+                    <td>SMPN 1 OKU</td>
+                    <td>1234567890</td>
+                    <td>Tidak Lulus</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Iqbal Muhammad</td>
+                    <td>Jl.Anggrek 3</td>
+                    <td>SMPN 1 OKU TIMUR</td>
+                    <td>1234567890</td>
+                    <td>Lulus</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
+    </div>
+</body>
+</html>
